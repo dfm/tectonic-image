@@ -65,3 +65,8 @@ jobs:
           args: test/test.tex
         env:
           XDG_CACHE_HOME: /github/workspace/cache
+
+      - run: |
+        ls -l cache
+        ls -l cache/Tectonic
+        ls -l cache/Tectonic/formats
