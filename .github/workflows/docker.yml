@@ -53,19 +53,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      # - uses: actions/cache@v2
-      #   with:
-      #     path: |
-      #       ./cache/Tectonic
-      #     key: tectonic-cache-${{ github.sha }}
-      #     restore-keys: |
-      #       tectonic-cache-
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ./cache/Tectonic
+            !./cache/Tectonic/format
+          key: tectonic-cache-${{ github.sha }}
+          restore-keys: |
+            tectonic-cache-
+
       - uses: docker://ghcr.io/dfm/tectonic-image:main
         with:
           args: test/test.tex
-        # env:
-        #   XDG_CACHE_HOME: /github/workspace/cache
-
-      - run: |
-          ls -l ~/.cache
-          ls -l ~/.cache/Tectonic
+        env:
+          XDG_CACHE_HOME: /github/workspace/cache
