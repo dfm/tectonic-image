@@ -56,8 +56,8 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: |
-            ./cache/Tectonic
-            !./cache/Tectonic/formats
+            cache/Tectonic
+            !cache/Tectonic/formats/*
           key: tectonic-cache-${{ github.sha }}
           restore-keys: |
             tectonic-cache-
