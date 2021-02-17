@@ -56,7 +56,3 @@ jobs:
       - uses: docker://ghcr.io/dfm/tectonic-image:main
         with:
           args: test/test.tex
-        env:
-          XDG_CONFIG_HOME: /github/workspace
-
-      - run: ls -a .
