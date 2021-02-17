@@ -57,7 +57,7 @@ jobs:
         with:
           path: |
             ./cache/Tectonic
-            !./cache/Tectonic/format
+            !./cache/Tectonic/formats
           key: tectonic-cache-${{ github.sha }}
           restore-keys: |
             tectonic-cache-
