@@ -24,11 +24,11 @@ RUN apt-get update \
     ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /home/tectonic/.cache && \
-    adduser --home /home/tectonic --no-create-home --disabled-password tectonic && \
-    chown -R tectonic /home/tectonic
+# RUN mkdir -p /home/tectonic/.cache && \
+#     adduser --home /home/tectonic --no-create-home --disabled-password tectonic && \
+#     chown -R tectonic /home/tectonic
+# USER tectonic
 
-USER tectonic
 COPY --from=builder /usr/local/cargo/bin/tectonic /usr/local/bin/tectonic
 
 ENTRYPOINT [ "tectonic" ]
