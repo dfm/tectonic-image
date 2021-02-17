@@ -67,6 +67,6 @@ jobs:
           XDG_CACHE_HOME: /github/workspace/cache
 
       - run: |
-        ls -l cache
-        ls -l cache/Tectonic
-        ls -l cache/Tectonic/formats
+          ls -l cache
+          ls -l cache/Tectonic
+          ls -l cache/Tectonic/formats
