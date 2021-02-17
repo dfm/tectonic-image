@@ -59,4 +59,4 @@ jobs:
         env:
           XDG_CONFIG_HOME: /github/workspace
 
-      - run: ls -a tectonic
+      - run: ls -a .
